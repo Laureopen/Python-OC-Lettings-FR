@@ -1,3 +1,12 @@
 from django.contrib import admin
+from .models import Address, Letting
 
-# Register your models here.
+
+@admin.register(Address)
+class AddressAdmin(admin.ModelAdmin):
+    list_display = ['number', 'street', 'city', 'state', 'zip_code']
+
+
+@admin.register(Letting)
+class LettingAdmin(admin.ModelAdmin):
+    list_display = ['title', 'address']
