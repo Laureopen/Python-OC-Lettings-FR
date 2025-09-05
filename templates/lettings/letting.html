@@ -1,9 +1,10 @@
 {% extends "base.html" %}
 {% load static %}
-{% block title %}{{ title }}{% endblock title %}
+{% block title %}{{ title }}{% endblock title %} {# Définit le titre dynamique de la page #}
 
 {% block content %}
 
+<!-- Section d'en-tête de la page -->
 <div class="container px-5 py-5 text-center">
     <div class="row justify-content-center">
         <div class="col-lg-8">
@@ -12,6 +13,7 @@
     </div>
 </div>
 
+<!-- Carte affichant les détails de l'adresse -->
 <div class="container px-5 py-5 text-center">
 	<div class="card">
 	    <div class="card-body">
@@ -23,6 +25,7 @@
 	</div>
 </div>
 
+<!-- Boutons de navigation -->
 <div class="container px-5 py-5 text-center">
     <div class="justify-content-center">
         <a class="btn fw-500 ms-lg-4 btn-primary px-10" href="{% url 'lettings:index' %}">

@@ -4,6 +4,7 @@
 {% block content %}
 
 
+<!-- Section d'en-tête de la page -->
 <div class="container px-5 py-5 text-center">
     <div class="row justify-content-center">
         <div class="col-lg-8">
@@ -12,6 +13,7 @@
     </div>
 </div>
 
+<!-- Liste des lettings -->
 <div class="container px-5">
     <div class="row gx-5 justify-content-center">
         <div class="col-lg-10">
@@ -20,6 +22,7 @@
                 <ul class="list-group list-group-flush list-group-careers">
                     {% for letting in lettings_list %}
                         <li class="list-group-item">
+                            {# Lien vers la page de détail d'une location #}
                             <a href="{% url 'lettings:letting' letting.id %}">{{ letting.title }}</a>
                         </li>
                     {% endfor %}
@@ -31,6 +34,7 @@
     </div>
 </div>
 
+<!-- Boutons de navigation -->
 <div class="container px-5 py-5 text-center">
     <div class="justify-content-center">
         <a class="btn fw-500 ms-lg-4 btn-primary px-10" href="{% url 'index' %}">
