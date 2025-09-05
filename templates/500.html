@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Erreur serveur - 500{% endblock %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Erreur serveur - 500</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="error-container">
+        <h1>500</h1>
+        <h2>Erreur interne du serveur</h2>
+        <p>
+            Une erreur inattendue s'est produite sur notre serveur.
+            Nous avons été notifiés du problème et travaillons à le résoudre rapidement.
+            Veuillez réessayer dans quelques minutes.
+        </p>
+        <a href="/" class="btn">Retour à l'accueil</a>
+    </div>
+    {% endblock %}
+</body>
+</html>
