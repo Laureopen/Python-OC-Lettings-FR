@@ -10,12 +10,18 @@ from django.urls import path
 from . import views
 
 #: Nom d'espace (namespace) pour éviter les conflits d'URL entre applications.
-app_name = 'profiles'  # Espace de noms
+app_name = 'profiles'
 
 #: Liste des routes de l'application.
 urlpatterns = [
-    path('', views.index, name='index'),  # Page listant tous les profils
-
-# Page détaillée pour un profil donné (identifié par username)
-    path('<str:username>/', views.profile, name='profile'),
+    path(
+        '',
+        views.index,
+        name='index'
+    ),  # Page listant tous les profils
+    path(
+        '<str:username>/',
+        views.profile,
+        name='profile'
+    ),  # Page détaillée pour un profil donné (identifié par username)
 ]

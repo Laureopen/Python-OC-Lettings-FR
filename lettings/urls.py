@@ -6,7 +6,8 @@ Ce module mappe les URL de l'application vers les vues correspondantes.
 from django.urls import path
 from . import views
 
-app_name = 'lettings'  #: Nom d'espace (namespace) pour éviter les conflits d'URL entre applications.
+#: Nom d'espace (namespace) pour éviter les conflits d'URL entre applications.
+app_name = 'lettings'
 
 #: Liste des routes de l'application
 urlpatterns = [
