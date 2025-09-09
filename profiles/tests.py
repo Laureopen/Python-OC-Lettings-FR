@@ -2,6 +2,7 @@ import pytest
 from django.contrib.auth.models import User
 from django.test import TestCase
 from profiles.models import Profile
+from django.urls import reverse
 
 
 @pytest.mark.django_db
@@ -22,14 +23,6 @@ class ProfileModelTest(TestCase):
     def test_favorite_city_field(self):
         """Le champ favorite_city doit être bien enregistré"""
         self.assertEqual(self.profile.favorite_city, "Paris")
-
-
-
-import pytest
-from django.contrib.auth.models import User
-from django.urls import reverse
-from django.test import TestCase
-from profiles.models import Profile
 
 
 @pytest.mark.django_db

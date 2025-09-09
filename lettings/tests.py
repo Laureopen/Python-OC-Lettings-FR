@@ -1,6 +1,8 @@
 from django.test import TestCase
 from .models import Address, Letting
 from django.core.exceptions import ValidationError
+from django.urls import reverse
+
 
 class AddressModelTest(TestCase):
 
@@ -69,12 +71,6 @@ class LettingModelTest(TestCase):
             new_letting.save()
 
 
-
-
-from django.test import TestCase
-from django.urls import reverse
-from .models import Letting, Address
-
 class LettingsViewsTest(TestCase):
 
     def setUp(self):
@@ -129,12 +125,6 @@ class LettingsViewsTest(TestCase):
         response = self.client.get(url)
         self.assertEqual(response.status_code, 404)
 
-
-
-
-from django.test import TestCase
-from django.urls import reverse
-from .models import Address, Letting
 
 class LettingsIntegrationTest(TestCase):
 

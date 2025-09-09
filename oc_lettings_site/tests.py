@@ -1,5 +1,11 @@
 from django.test import TestCase
 from django.urls import reverse
+from django.contrib import admin
+from django.urls import path, include
+from django.conf import settings
+from django.conf.urls.static import static
+from . import views
+
 
 class IndexViewTest(TestCase):
 
@@ -20,10 +26,6 @@ class IndexViewTest(TestCase):
         self.assertTemplateUsed(response, 'oc_lettings_site/index.html')
 
 
-
-
-
-
 """
 Configuration des routes (URLconf) principales du projet 'oc_lettings_site'.
 
@@ -33,11 +35,7 @@ Ce module définit les correspondances entre les chemins d'URL et :
     - les applications internes (lettings et profiles).
 Il gère également la configuration des fichiers statiques.
 """
-from django.contrib import admin
-from django.urls import path, include
-from django.conf import settings
-from django.conf.urls.static import static
-from . import views
+
 
 #: Liste des routes principales du projet.
 urlpatterns = [
@@ -46,7 +44,6 @@ urlpatterns = [
     path('lettings/', include('lettings.urls')),  # Espace de noms lettings
     path('profiles/', include('profiles.urls')),  # Espace de noms profiles
 ]
-
 
 # Configuration des fichiers statiques
 if settings.DEBUG:
