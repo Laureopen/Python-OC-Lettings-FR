@@ -61,8 +61,8 @@ jobs:
           context: .
           push: true
           tags: |
-            ${{ secrets.DOCKERHUB_USERNAME }}/oc-lettings:latest
-            ${{ secrets.DOCKERHUB_USERNAME }}/oc-lettings:${{ github.sha }}
+            ${{ secrets.DOCKERHUB_USERNAME }}/python-oc-lettings-fr-web:latest
+            ${{ secrets.DOCKERHUB_USERNAME }}/python-oc-lettings-fr-web:${{ github.sha }}
 
   # -------------------------
   # 3) Déploiement Render (uniquement sur master/main)
