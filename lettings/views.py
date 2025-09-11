@@ -14,7 +14,7 @@ def index(request):
         Vue d'accueil affichant la liste des locations.
 
         Args:
-            request (HttpRequest): Objet de requête HTTP.
+            request (HttpRequest): Objet de requête HTTP
 
         Returns:
             HttpResponse: Page HTML contenant la liste des locations.
