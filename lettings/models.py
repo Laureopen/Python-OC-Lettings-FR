@@ -25,7 +25,7 @@ class Address(models.Model):
             zip_code (PositiveIntegerField) :
                 Code postal, limité à 5 chiffres.
             country_iso_code (CharField) :
-                Code ISO du pays à 3 lettres (ex. : 'USA', 'FRA').
+                Code ISO du pays à 3 lettres (ex. : 'USA', 'FRA'
         """
     number = models.PositiveIntegerField(validators=[MaxValueValidator(9999)])
     street = models.CharField(max_length=64)
