@@ -14,5 +14,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 # Étape 6 : exposer le port de Django
 EXPOSE 8000
-# Étape 7 : lancer le serveur Django
+# Étape 7 : collecter les fichiers statiques
+RUN python manage.py collectstatic --noinput
+# Étape 8 : lancer le serveur Django
 CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]

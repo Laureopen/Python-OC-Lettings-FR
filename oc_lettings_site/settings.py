@@ -121,6 +121,8 @@ STATICFILES_DIRS = [BASE_DIR / "static", ]
 
 SENTRY_DSN = os.getenv("SENTRY_DSN", "")
 
+STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
+
 if SENTRY_DSN:
     sentry_sdk.init(
         dsn=SENTRY_DSN,
