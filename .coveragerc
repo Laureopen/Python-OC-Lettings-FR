@@ -1,0 +1,17 @@
+[run]
+branch = True
+source =.
+omit =
+    */migrations/*
+    */tests.py
+    */__init__.py
+
+[report]
+skip_empty = True
+show_missing = True
+omit =
+    */migrations/*
+    */tests.py
+
+[html]
+directory = coverage_html_report
