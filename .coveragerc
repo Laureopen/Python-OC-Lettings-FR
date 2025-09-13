@@ -1,10 +1,12 @@
 [run]
-branch = True
 source =.
 omit =
     */migrations/*
     */tests.py
     */__init__.py
+    manage.py
+    oc_lettings_site/wsgi.py
+    oc_lettings_site/asgi.py
 
 [report]
 skip_empty = True
@@ -12,6 +14,9 @@ show_missing = True
 omit =
     */migrations/*
     */tests.py
+    manage.py
+    oc_lettings_site/wsgi.py
+    oc_lettings_site/asgi.py
 
 [html]
 directory = coverage_html_report
