@@ -149,8 +149,6 @@ if os.getenv('SENTRY_DSN'):
         profiles_sample_rate=float(os.getenv('SENTRY_PROFILES_SAMPLE_RATE', 0.1)),
         send_default_pii=False,  # Important : ne pas envoyer d'infos personnelles
         environment=os.getenv('SENTRY_ENVIRONMENT', 'development'),
-        # Filtrer les erreurs communes non critiques
-        before_send=lambda event, hint: None if 'DisallowedHost' in str(hint.get('exc_info', '')) else event,
     )
 LOGGING = {
     'version': 1,

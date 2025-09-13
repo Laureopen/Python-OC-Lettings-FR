@@ -58,5 +58,6 @@ def letting(request, letting_id):
         logger.error("Location non trouvée pour id=%s", letting_id, exc_info=True)
         raise
     except Exception as e:
-        logger.error("Erreur inattendue lors de l'affichage de la location id=%s : %s", letting_id, e, exc_info=True)
+        logger.error("Erreur inattendue lors de l'affichage de la location id=%s : %s",
+                     letting_id, e, exc_info=True)
         raise
