@@ -6,8 +6,13 @@ Ce module contient les vues permettant d'afficher :
     - Le détail d'un profil spécifique (profile)
 """
 
+import logging
 from django.shortcuts import render, get_object_or_404
+from django.http import Http404
 from .models import Profile
+
+# Initialisation du logger
+logger = logging.getLogger(__name__)
 
 
 def index(request):
@@ -23,10 +28,14 @@ def index(request):
         Context:
             profiles_list (QuerySet): liste de tous les objets Profile.
         """
-    # Renommé de profiles_index
-    profiles_list = Profile.objects.all()
-    context = {'profiles_list': profiles_list}
-    return render(request, 'profiles/index.html', context)  # Renommé de index.html
+    try:
+        profiles_list = Profile.objects.all()
+        logger.info("Liste des profils récupérée avec succès (count=%s)", profiles_list.count())
+        context = {'profiles_list': profiles_list}
+        return render(request, 'profiles/index.html', context)
+    except Exception as e:
+        logger.error("Erreur lors de la récupération des profils : %s", e, exc_info=True)
+        raise
 
 
 def profile(request, username):
@@ -43,6 +52,15 @@ def profile(request, username):
     Context:
         profile (Profile): instance du profil correspondant au username.
     """
-    profile = get_object_or_404(Profile, user__username=username)
-    context = {'profile': profile}
-    return render(request, 'profiles/profile.html', context)
+    try:
+        profile = get_object_or_404(Profile, user__username=username)
+        logger.info("Profil '%s' trouvé et affiché.", username)
+        context = {'profile': profile}
+        return render(request, 'profiles/profile.html', context)
+    except Http404:
+        logger.error("Profil non trouvé pour username='%s'", username, exc_info=True)
+        raise
+    except Exception as e:
+        logger.error("Erreur inattendue lors de l'affichage du profil '%s' : %s", username, e, exc_info=True)
+        raise
+

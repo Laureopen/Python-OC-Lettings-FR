@@ -1,9 +1,11 @@
+import logging
 import os
 
 from pathlib import Path
 import sentry_sdk
 from sentry_sdk.integrations.django import DjangoIntegration
 from dotenv import load_dotenv
+from sentry_sdk.integrations.logging import LoggingIntegration
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -124,12 +126,42 @@ SENTRY_DSN = os.getenv("SENTRY_DSN", "")
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
 
-if SENTRY_DSN:
+# Configuration Sentry Logging
+sentry_logging = LoggingIntegration(
+    level=logging.INFO,
+    event_level=logging.INFO
+)
+
+# Initialisation Sentry
+if os.getenv('SENTRY_DSN'):
     sentry_sdk.init(
-        dsn=SENTRY_DSN,
-        integrations=[DjangoIntegration()],
-        traces_sample_rate=float(os.getenv("SENTRY_TRACES_SAMPLE_RATE", "0.2")),
-        send_default_pii=os.getenv("SENTRY_SEND_PII", "True") == "True",
-        environment=os.getenv("DJANGO_ENV", "development"),  # ex: staging, production
-        release=os.getenv("APP_VERSION", "unknown"),         # suivi des versions
+        dsn=os.getenv('SENTRY_DSN'),
+        integrations=[
+            DjangoIntegration(
+                transaction_style='url',
+                middleware_spans=True,
+                signals_spans=True,
+                cache_spans=True,
+            ),
+            sentry_logging,
+        ],
+        traces_sample_rate=float(os.getenv('SENTRY_TRACES_SAMPLE_RATE', 0.1)),
+        profiles_sample_rate=float(os.getenv('SENTRY_PROFILES_SAMPLE_RATE', 0.1)),
+        send_default_pii=False,  # Important : ne pas envoyer d'infos personnelles
+        environment=os.getenv('SENTRY_ENVIRONMENT', 'development'),
+        # Filtrer les erreurs communes non critiques
+        before_send=lambda event, hint: None if 'DisallowedHost' in str(hint.get('exc_info', '')) else event,
     )
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'root': {
+        'handlers': ['console'],
+        'level': 'INFO',
+    },
+}

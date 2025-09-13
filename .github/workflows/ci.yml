@@ -34,8 +34,8 @@ jobs:
 
       - name: Run tests with pytest + coverage
         run: |
-          coverage run -m pytest
-          coverage report --fail-under=80
+          coverage run --rcfile=.coveragerc -m pytest
+          coverage report --rcfile=.coveragerc --fail-under=80
 
   # -------------------------
   # 2) Build & Push Docker image (uniquement sur master/main)
