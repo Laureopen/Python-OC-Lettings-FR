@@ -23,8 +23,3 @@ Vues principales
 .. automodule:: oc_lettings_site.views
    :members:
    :undoc-members:
-
-Retour à l'accueil
-------------------
-
-:doc:`index`
