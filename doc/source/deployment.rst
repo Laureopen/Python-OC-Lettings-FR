@@ -37,7 +37,7 @@ Les variables suivantes doivent être configurées dans l'interface Render :
 
 * ``SECRET_KEY`` : Clé secrète Django
 * ``DEBUG`` : False pour la production
-* ``DATABASE_URL`` : URL de la base de données (fournie par Render)
+
 
 Fichiers de configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~
