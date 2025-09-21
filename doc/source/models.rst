@@ -18,8 +18,3 @@ Modèles Profiles
    :members:
    :undoc-members:
    :show-inheritance:
-
-Retour à l'accueil
-------------------
-
-:doc:`index`
