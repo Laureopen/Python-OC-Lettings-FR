@@ -75,3 +75,46 @@ Utilisation de PowerShell, comme ci-dessus sauf :
 
 - Pour activer l'environnement virtuel, `.\venv\Scripts\Activate.ps1` 
 - Remplacer `which <my-command>` par `(Get-Command <my-command>).Path`
+
+
+### Deploiement
+
+Vue d’ensemble
+
+Le projet est configuré pour être déployé automatiquement afin de reproduire fidèlement le comportement observé en développement local.
+Le déploiement repose sur :
+
+- Docker pour construire une image de l'application,
+- GitHub Actions pour executer la CI/CD (tests, build et deploiement),
+- Render pour l'hebergement en production.
+
+Configuration requise:
+- Créer un compte Render
+- Installer Docker localement avant deploiement
+- Les secrets GitHub Actions definis dans le repository GitHub:
+
+![img.png](img.png)
+
+Etapes de deploiement:
+
+1. Prépare le code
+- Modifier un templates par exemple
+- Ensuite faire un commit puis faire un push sur la branche principale(main ou master).
+
+2. Déclenchement du pipeline CI/CD (Github) 
+- Allez sur le projet en question cliquer sur action puis sur le titre comme dans l'exemple (read the doc).
+
+![img_1.png](img_1.png)
+
+3. Verification du deploiement
+
+![img_2.png](img_2.png)
+
+-  Une fois le deploiement terminé, accédez à l’URL de l’application à partir de Render:
+
+
+![img_3.png](img_3.png)
+
+![img_4.png](img_4.png)
+
+![img_5.png](img_5.png)
