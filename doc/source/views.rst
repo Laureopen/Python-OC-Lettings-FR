@@ -1,12 +1,5 @@
-Vues Django
-===========
-
-Cette section documente automatiquement toutes les vues Django de l'application OC Lettings.
-
-Vues Django
-===========
-
-Cette section documente automatiquement toutes les vues Django de l'application OC Lettings.
+Vues
+====
 
 .. automodule:: lettings.views
    :members:
