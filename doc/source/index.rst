@@ -12,5 +12,11 @@ Bienvenue dans la documentation du projet **Orange County Lettings**.
    :maxdepth: 2
    :caption: Table des matières
 
+   description
+   installation
+   technologies
+   database
    models
    views
+   usage-guide
+   deployment
