@@ -61,4 +61,6 @@ def profile(request, username):
         logger.error("Profil non trouvé pour username='%s'", username, exc_info=True)
         raise
     except Exception as e:
-
+        logger.error("Erreur inattendue lors de l'affichage du profil '%s' : %s",
+                     username, e, exc_info=True)
+        raise
