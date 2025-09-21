@@ -91,30 +91,17 @@ Le déploiement repose sur :
 Configuration requise:
 - Créer un compte Render
 - Installer Docker localement avant deploiement
-- Les secrets GitHub Actions definis dans le repository GitHub:
+- Les secrets GitHub Actions définis dans le repository GitHub
 
-![img.png](img.png)
+Etapes de déploiement:
 
-Etapes de deploiement:
-
-1. Prépare le code
-- Modifier un templates par exemple
-- Ensuite faire un commit puis faire un push sur la branche principale(main ou master).
+1. Préparer le code
+- Modifier un template par exemple
+- Faire un commit puis faire un push sur la branche principale(main ou master).
 
 2. Déclenchement du pipeline CI/CD (Github) 
 - Allez sur le projet en question cliquer sur action puis sur le titre comme dans l'exemple (read the doc).
 
 ![img_1.png](img_1.png)
 
-3. Verification du deploiement
-
-![img_2.png](img_2.png)
-
--  Une fois le deploiement terminé, accédez à l’URL de l’application à partir de Render:
-
-
-![img_3.png](img_3.png)
-
-![img_4.png](img_4.png)
-
-![img_5.png](img_5.png)
+-  Une fois le déploiement terminé, accédez à l’URL de l’application à partir de Render.
