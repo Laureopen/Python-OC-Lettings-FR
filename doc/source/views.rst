@@ -1,7 +1,5 @@
 Vues
 ====
-Cette section documente automatiquement toutes les vues Django de l'application OC Lettings.
-
 .. automodule:: lettings.views
    :members:
    :undoc-members:
