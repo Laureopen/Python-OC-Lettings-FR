@@ -62,18 +62,8 @@ Application Lettings
 Schéma relationnel
 -----------------
 
-.. code-block:: text
+.. image:: _static/diagramme.png
 
-    User (Django Auth)
-    └── Profile (1:1)
-        └── favorite_city
-
-    Letting
-    └── address_id (FK) → Address
-                         ├── number, street
-                         ├── city, state
-                         ├── zip_code
-                         └── country_iso_code
 
 Migrations
 ----------
