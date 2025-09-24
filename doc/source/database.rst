@@ -62,30 +62,8 @@ Application Lettings
 Schéma relationnel
 -----------------
 
-.. code-block:: text
+.. image:: _static/Image1.png
 
-    auth_user
-        id (PK)
-        ...
-
-    Python-OC-Lettings-FR_profile
-        id (PK)
-        user_id (FK -> auth_user.id)
-        favorite_city
-
-    Python-OC-Lettings-FR_address
-        id (PK)
-        number
-        street
-        city
-        state
-        zip_code
-        country_iso_code
-
-    Python-OC-Lettings-FR_letting
-        id (PK)
-        title
-        address_id (FK -> Python-OC-Lettings-FR_address.id)
 
 Migrations
 ----------
