@@ -11,6 +11,8 @@ Pipeline CI/CD
 
 Le déploiement est déclenché automatiquement via **GitHub Actions** lors de chaque push sur la branche principale.
 
+.. image:: _static/Image4.png
+
 **Processus automatique :**
 
 1. **Déclenchement** : Push de code sur GitHub
