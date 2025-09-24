@@ -62,7 +62,7 @@ Application Lettings
 Schéma relationnel
 -----------------
 
-.. image:: _static/Image1.png
+.. image:: _static/schema.png
 
 
 Migrations

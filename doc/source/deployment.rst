@@ -11,7 +11,7 @@ Pipeline CI/CD
 
 Le déploiement est déclenché automatiquement via **GitHub Actions** lors de chaque push sur la branche principale.
 
-.. image:: _static/Image4.png
+.. image:: _static/cicd.png
 
 **Processus automatique :**
 
@@ -23,6 +23,8 @@ Plateforme d'hébergement
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 L'application est hébergée sur **Render**, qui assure :
+
+.. image:: _static/render.png
 
 * **Déploiement automatique** depuis GitHub
 * **Scalabilité** automatique
