@@ -49,6 +49,10 @@ Fichiers de configuration
 Le projet doit inclure les fichiers suivants pour le déploiement :
 
 
+.. image:: _static/github.png
+
+
+
 * ``.github/workflows/`` : Configuration GitHub Actions
 * ``requirements.txt`` : Dépendances Python
 
