@@ -93,6 +93,9 @@ Installation du projet
 
 Étape 4 : Vérification de l'environnement
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+une fois l'environnement activé
+
+.. image:: _static/venv.png
 
 Vérifiez que Python pointe vers l'environnement virtuel :
 
