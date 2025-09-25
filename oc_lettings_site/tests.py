@@ -46,9 +46,4 @@ urlpatterns = [
 ]
 
 # Configuration des fichiers statiques
-if settings.DEBUG:
-    #: En mode DEBUG : servir les fichiers statiques via Django.
-    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-else:
-    # En dev uniquement : servir les statiques même si DEBUG=False
-    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
